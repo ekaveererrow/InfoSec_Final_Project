@@ -87,32 +87,41 @@
     <title>Login</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body>
+    <body>
+
     <div class="login-container">
-        <h1>Login</h1>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <h1>Welcome Back</h1>
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" autocomplete="off">
             <input type="hidden" name="csrf_token" value="<?php echo $_SESSION['csrf_token']; ?>">
 
+            <!-- Email -->
             <div class="input-group">
-                <input type="email" name="email" required>
-                <label>Email</label>
+                <input type="email" name="email" id="email" required>
+                <label for="email">Email</label>
             </div>
+
+            <!-- Password -->
             <div class="input-group">
-                <input type="password" name="password" required>
-                <label>Password</label>
+                <input type="password" name="password" id="password" required>
+                <label for="password">Password</label>
             </div>
+
+            <!-- Forgot password -->
             <div class="forgot-pass">
                 <a href="#">Forgot Password?</a>
             </div>
-            
+
+            <!-- Submit -->
             <div class="btn-container">
-                <button class="btn">Login</button>
+                <button type="submit" class="btn">Login</button>
             </div>
 
+            <!-- Signup -->
             <div class="signup-link">
                 Not a member? <a href="sign_up.php">Sign Up</a>
             </div>
         </form>
     </div>
+
 </body>
 </html>

@@ -1,11 +1,10 @@
 <?php
 
     // Security Headers
-    header("Content-Security-Policy: default-src 'self';"); 
-    header("X-Frame-Options: DENY"); // Prevent Clickjacking
-    header("X-Content-Type-Options: nosniff"); // Prevent MIME-type sniffing
-
-    // Prevent information leakage via "X-Powered-By" and "Server" headers
+    // Security Headers
+    header("Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;");
+    header("X-Frame-Options: DENY");
+    header("X-Content-Type-Options: nosniff");
     header_remove("X-Powered-By");
 
     // error reporting

@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Load Sidebar
-    fetch("sidebar.html")
+    fetch("sidebar.php")
         .then(response => response.text())
         .then(data => {
             document.getElementById("sidebar-container").innerHTML = data;
         });
 
     // Load Header
-    fetch("header.html")
+    fetch("header.php")
         .then(response => response.text())
         .then(data => {
             document.getElementById("header-container").innerHTML = data;
